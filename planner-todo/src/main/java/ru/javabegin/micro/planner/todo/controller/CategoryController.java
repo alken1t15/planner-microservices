@@ -6,7 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ru.javabegin.micro.planner.todo.search.CategorySearchValues;
 import ru.javabegin.micro.planner.todo.service.CategoryService;
-import ru.javabegin.mirco.planner.entity.Category;
+import ru.javabegin.micro.planner.entity.Category;
 
 import java.util.List;
 import java.util.NoSuchElementException;

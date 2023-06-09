@@ -1,4 +1,4 @@
-package ru.javabegin.mirco.planner.entity;
+package ru.javabegin.micro.planner.entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;

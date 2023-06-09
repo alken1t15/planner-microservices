@@ -1,10 +1,10 @@
-package ru.javabegin.mirco.planner.plannerserver;
+package ru.javabegin.micro.planner.entity;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class PlannerServerApplicationTests {
+class PlannerEntityApplicationTests {
 
     @Test
     void contextLoads() {

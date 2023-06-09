@@ -1,4 +1,4 @@
-package ru.javabegin.mirco.planner.plannerserver;
+package ru.javabegin.micro.planner.plannerserver;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-package ru.javabegin.mirco.planner.apigetway;
+package ru.javabegin.micro.planner.apigetway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

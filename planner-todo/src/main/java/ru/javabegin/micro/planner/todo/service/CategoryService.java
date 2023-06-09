@@ -3,7 +3,7 @@ package ru.javabegin.micro.planner.todo.service;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 import ru.javabegin.micro.planner.todo.repo.CategoryRepository;
-import ru.javabegin.mirco.planner.entity.Category;
+import ru.javabegin.micro.planner.entity.Category;
 
 import java.util.List;
 

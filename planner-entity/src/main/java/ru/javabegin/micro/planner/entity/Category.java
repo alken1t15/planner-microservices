@@ -1,6 +1,6 @@
-package ru.javabegin.mirco.planner.entity;
+package ru.javabegin.micro.planner.entity;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -10,23 +10,24 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import java.util.Objects;
 
+
 /*
 
-справочноное значение - приоритет пользователя
+справочноное значение - категория пользователя
 может использовать для своих задач
+содержит статистику по каждой категории
 
  */
 
-
 @Entity
-@Table(name = "priority", schema = "todolist", catalog = "postgres")
+@Table(name = "category", schema = "todo", catalog = "postgres")
 @NoArgsConstructor
 @AllArgsConstructor
 @Setter
 @Getter
 @Cacheable
 @org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-public class Priority {
+public class Category {
 
     // указываем, что поле заполняется в БД
     // нужно, когда добавляем новый объект и он возвращается уже с новым id
@@ -35,22 +36,28 @@ public class Priority {
     private Long id;
 
     private String title;
-    private String color;
+
+    @Column(name = "completed_count", updatable = false) // т.к. это поле высчитывается автоматически в триггерах - вручную его не обновляем (updatable = false)
+    private Long completedCount;
+
+    @Column(name = "uncompleted_count", updatable = false) // т.к. это поле высчитывается автоматически в триггерах - вручную его не обновляем (updatable = false)
+    private Long uncompletedCount;
 
 //    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
 //    @ManyToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name = "user_id", referencedColumnName = "id") // по каким полям связывать (foreign key)
+//    @JoinColumn(name = "user_id", referencedColumnName = "id") // по каким полям связаны эти 2 объекта (foreign key)
 //    private User user;
 
     @Column(name = "user_id")
     private Long userId;
 
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Priority priority = (Priority) o;
-        return id.equals(priority.id);
+        Category category = (Category) o;
+        return id.equals(category.id);
     }
 
     @Override
